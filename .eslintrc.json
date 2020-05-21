@@ -1,7 +1,23 @@
 {
-    // Use the AirBnB JS styleguide - https://github.com/airbnb/javascript
-    "extends": "airbnb",
-    "rules": {
-      "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
-    }
+  // Use the AirBnB JS styleguide - https://github.com/airbnb/javascript
+  "extends": [
+    "airbnb",
+    "plugin:testing-library/recommended",
+    "plugin:testing-library/react"
+  ],
+  "plugins": ["testing-library"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".jsx"] }
+    ],
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debug": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  }
 }
