@@ -1,3 +1,21 @@
+# Stackline Assessment
+
+## Setup
+
+### Redux
+
+Although Redux now has an official recommendation on tooling with [Redux Toolkit](https://redux-toolkit.js.org/), I did not choose to use that template as I haven't fully familiarized myself with it and prefer not to be slowed down by trying to learn it while doing this assessment.
+
+### Code Formatting
+
+Setup with:
+* Husky and lint-staged for commit hooks
+* Prettier for code formatting
+* ESLint for linting
+* Stylelint for linting
+
+## Usage
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
