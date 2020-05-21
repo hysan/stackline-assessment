@@ -1,0 +1,7 @@
+{
+    // Use the AirBnB JS styleguide - https://github.com/airbnb/javascript
+    "extends": "airbnb",
+    "rules": {
+      "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
+    }
+}
