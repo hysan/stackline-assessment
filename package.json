@@ -50,11 +50,11 @@
   },
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
+      "prettier --write",
       "eslint src/*.js --fix-dry-run"
     ],
     "./src/*.{css}": [
-      "stylint -c ./.stylintrc"
+      "stylelint"
     ]
   }
 }
