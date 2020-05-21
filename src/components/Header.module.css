@@ -1,0 +1,6 @@
+@value colors: "../styles/_colors.css";
+@value dark-grey, chart-blue from colors;
+
+.header {
+  color: dark-grey;
+}

@@ -1,0 +1,13 @@
+/* Layout Colors */
+@value background: #f6f8fa;
+@value foreground: #ffffff;
+
+/* Chart Lines */
+@value chart-blue: #9acffa;
+@value chart-grey: #98a4bd;
+
+/* Fonts, Dividers, Borders, etc. */
+@value off-white: #f4f6f9;
+@value light-grey: #585c67;
+@value dark-grey: #475166;
+@value icon-selected: #46a7f6;
