@@ -1,0 +1,17 @@
+@value colors: "../styles/_colors.css";
+@value light-grey, dark-grey from colors;
+
+.container {
+  padding: 1rem 0;
+}
+
+.title {
+  margin: 0 1.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: dark-grey;
+}
+
+.axis {
+  color: light-grey;
+}

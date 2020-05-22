@@ -31,3 +31,7 @@
   color: background;
   background-color: background;
 }
+
+.topSpacing {
+  margin-top: 3rem;
+}

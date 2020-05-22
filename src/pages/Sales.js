@@ -50,7 +50,9 @@ class Sales extends Component {
           <div className={styles.widgetContainer}>
             <SalesGraph />
           </div>
-          <div className={styles.widgetContainer}>
+          <div
+            className={classnames(styles.widgetContainer, styles.topSpacing)}
+          >
             <SalesTable />
           </div>
         </div>

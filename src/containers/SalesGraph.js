@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { LineChart, XAxis, YAxis, CartesianGrid, Line } from 'recharts';
+import { ResponsiveContainer, LineChart, XAxis, YAxis, Line } from 'recharts';
+
+import styles from './SalesGraph.module.css';
 
 /**
  * Using something like moment would be a bit heavy
@@ -70,14 +72,40 @@ function SalesGraph(props) {
   /* eslint-enable no-param-reassign */
 
   return (
-    <LineChart width={900} height={300} data={data}>
-      <XAxis dataKey="month" />
-      <YAxis />
-      <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-      <Line type="monotone" dataKey="retailSales" stroke="#8884d8" />
-      <Line type="monotone" dataKey="retailerMargin" stroke="#82ca9d" />
-      <Line type="monotone" dataKey="wholesaleSales" stroke="#82ca9d" />
-    </LineChart>
+    <div className={styles.container}>
+      <h3 className={styles.title}>Retail Sales</h3>
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart data={data}>
+          <XAxis
+            className={styles.axis}
+            dataKey="month"
+            interval="preserveStartEnd"
+            padding={{ left: 30, right: 30 }}
+            tickLine={false}
+            tickMargin={10}
+          />
+          <YAxis hide />
+          <Line
+            type="monotone"
+            dataKey="retailSales"
+            stroke="#9acffa"
+            strokeWidth={2}
+          />
+          <Line
+            type="monotone"
+            dataKey="retailerMargin"
+            stroke="#98a4bd"
+            strokeWidth={2}
+          />
+          <Line
+            type="monotone"
+            dataKey="wholesaleSales"
+            stroke="#8884d8"
+            strokeWidth={2}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 
