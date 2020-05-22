@@ -1,3 +1,4 @@
 module.exports = {
-  EXAMPLE: 'EXAMPLE',
+  SET_PRODUCT: 'SET_PRODUCT',
+  SET_PRODUCT_SALES: 'SET_PRODUCT_SALES',
 };

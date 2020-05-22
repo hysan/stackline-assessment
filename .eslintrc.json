@@ -13,7 +13,9 @@
     ],
     "testing-library/await-async-query": "error",
     "testing-library/no-await-sync-query": "error",
-    "testing-library/no-debug": "warn"
+    "testing-library/no-debug": "warn",
+    "react/destructuring-assignment": 0,
+    "react/prop-types": 0
   },
   "env": {
     "browser": true,

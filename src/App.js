@@ -1,31 +1,56 @@
-import React from 'react';
-import logo from './assets/svg/logo.svg';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import styles from './App.module.css';
-import ProductAdapter from './stubs/ProductAdapter';
 
-function App() {
-  ProductAdapter.getProducts()
-    .then((res) => res.json())
-    .then(console.log);
+import Header from './components/Header';
+import Home from './pages/Home';
+import Overview from './pages/Overview';
+import Sales from './pages/Sales';
 
-  return (
-    <div className={styles.app}>
-      <header className={styles.header}>
-        <img src={logo} className={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className={styles.link}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { getProducts } from './actions/app';
+
+class App extends Component {
+  componentDidMount() {
+    this.props.getProducts();
+  }
+
+  render() {
+    const { loadingProducts } = this.props;
+
+    return (
+      <div className={styles.app}>
+        <Header />
+        {/* Nothing fancy for now as there is no spec for anything but the Sales page */}
+        {loadingProducts ? (
+          <p>Loading...</p>
+        ) : (
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/product/:productId">
+              <Overview />
+            </Route>
+            <Route exact path="/product/:productId/sales">
+              <Sales />
+            </Route>
+            <Route path="*">
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        )}
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  loadingProducts: state.app.loadingProducts,
+});
+
+const mapDispatchToProps = {
+  getProducts,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

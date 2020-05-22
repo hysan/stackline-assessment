@@ -9,10 +9,52 @@ Although Redux now has an official recommendation on tooling with [Redux Toolkit
 ### Code Formatting
 
 Setup with:
-* Husky and lint-staged for commit hooks
-* Prettier for code formatting
-* ESLint for linting
-* Stylelint for linting
+
+- Husky and lint-staged for commit hooks
+- Prettier for code formatting
+- ESLint for linting
+- Stylelint for linting
+
+## Analysis
+
+### Data
+
+- Given data is an array of what appears to be products with sales data.
+- While there is only one product, that indicates that you can potentially be receiving many of them to browse through on the dashboard.
+- The mock shows a fairly standard layout:
+  - Fixed header with a logo that likely links back to their homepage.
+  - Left sidebar with:
+    - Product Info
+    - Navigation with Sales highlighted.
+    - This indicates that they want routing where Overview is some sort of high level page with info from the JSON that we aren't rendering on the Sales page. It is unclear how you can see a listing of all products from this design.
+  - Right sidebar with:
+    - Sales Graph
+      - Unclear what two values are being plotted from the sales data
+    - Sales Table/Listing
+      - All columns appear sortable
+- It appears that the relevant fields from the provided JSON are:
+  - title
+  - tags
+  - subtitle
+  - sales
+  - id
+  - image
+- All other data appears to be unused.
+
+### Features
+
+**Minimum Requirements** (based on instructions):
+
+- [ ] Display Product
+- [ ] 1 Year View Graph of Sales
+- [ ] Sortable Table of Sales History
+- [ ] Pull JSON from mock endpoint
+
+**Additional Requirements**:
+
+- [ ] Navigation
+- [ ] Overview Page (likely additional product information along with summaries)
+- [ ] Ability to view different years for Sales Graph
 
 ## Usage
 
