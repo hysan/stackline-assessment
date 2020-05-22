@@ -3,8 +3,10 @@ import * as PRODUCT from '../constants/product';
 const initialState = {
   product: null,
   sales: [],
+  tags: [],
   loadingProduct: false,
   loadingSales: false,
+  loadingTags: false,
 };
 
 export default function reducer(state = initialState, action) {
@@ -26,6 +28,14 @@ export default function reducer(state = initialState, action) {
     case PRODUCT.FETCHED_PRODUCT_SALES:
       return { ...state, loadingSales: false };
     case PRODUCT.FETCH_PRODUCT_SALES_ERROR:
+      return state;
+    case PRODUCT.SET_PRODUCT_TAGS:
+      return { ...state, tags: payload.tags };
+    case PRODUCT.FETCHING_PRODUCT_TAGS:
+      return { ...state, loadingTags: true };
+    case PRODUCT.FETCHED_PRODUCT_TAGS:
+      return { ...state, loadingTags: false };
+    case PRODUCT.FETCH_PRODUCT_TAGS_ERROR:
       return state;
     default:
       return state;

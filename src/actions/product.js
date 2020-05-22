@@ -66,3 +66,34 @@ export const getProductSales = (productId) => (dispatch) => {
       dispatch({ type: PRODUCT.FETCHED_PRODUCT_SALES });
     });
 };
+
+export const getProductTags = (productId) => (dispatch) => {
+  dispatch({
+    type: PRODUCT.FETCHING_PRODUCT_TAGS,
+  });
+  ProductAdapter.getTags(productId)
+    .then((res) => {
+      if (!res.ok) {
+        // faking api calls, so simplifying what would be done here
+        throw new Error(res.status);
+      }
+      return res.json();
+    })
+    .then((tags) => {
+      dispatch({
+        type: PRODUCT.SET_PRODUCT_TAGS,
+        payload: { tags },
+      });
+      dispatch({ type: PRODUCT.FETCHED_PRODUCT_TAGS });
+    })
+    .catch((err) => {
+      // Depending on your requirements, you can retry with back off, not retry,
+      // display an error message, etc.
+      dispatch({
+        type: PRODUCT.FETCH_PRODUCT_TAGS_ERROR,
+        payload: new Error(err),
+        error: true,
+      });
+      dispatch({ type: PRODUCT.FETCHED_PRODUCT_TAGS });
+    });
+};

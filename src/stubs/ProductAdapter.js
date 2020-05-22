@@ -57,7 +57,7 @@ class ProductAdapter {
   }
 
   static getTags(productId) {
-    this.requestSimulator(
+    return this.requestSimulator(
       this.products.find((product) => product.id === productId).tags,
       100,
     );

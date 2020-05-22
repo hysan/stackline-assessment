@@ -1,0 +1,33 @@
+@value colors: "../styles/_colors.css";
+@value foreground, background from colors;
+
+@value gutter: 0.5rem;
+
+.container {
+  margin: 3rem gutter;
+  display: flex;
+}
+
+.leftPane {
+  margin: 0 gutter;
+  width: 14rem;
+  max-width: 14rem;
+}
+
+.rightPane {
+  margin: 0 gutter;
+  flex: 1;
+}
+
+.widgetContainer {
+  background-color: foreground;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  color: background;
+  background-color: background;
+}
