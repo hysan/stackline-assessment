@@ -77,12 +77,12 @@ function SalesGraph(props) {
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <XAxis
-            className={styles.axis}
             dataKey="month"
             interval="preserveStartEnd"
             padding={{ left: 30, right: 30 }}
             tickLine={false}
             tickMargin={10}
+            stroke="#9eabbc"
           />
           <YAxis hide />
           <Line
