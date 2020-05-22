@@ -50,7 +50,7 @@ class ProductAdapter {
   }
 
   static getSales(productId) {
-    this.requestSimulator(
+    return this.requestSimulator(
       this.products.find((product) => product.id === productId).sales,
       100,
     );
@@ -64,14 +64,14 @@ class ProductAdapter {
   }
 
   static getDetails(productId) {
-    this.requestSimulator(
+    return this.requestSimulator(
       this.products.find((product) => product.id === productId).details,
       100,
     );
   }
 
   static getReviews(productId) {
-    this.requestSimulator(
+    return this.requestSimulator(
       this.products.find((product) => product.id === productId).reviews,
       100,
     );

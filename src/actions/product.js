@@ -40,7 +40,7 @@ export const getProductSales = (productId) => (dispatch) => {
   dispatch({
     type: PRODUCT.FETCHING_PRODUCT_SALES,
   });
-  ProductAdapter.getProductSales(productId)
+  ProductAdapter.getSales(productId)
     .then((res) => {
       if (!res.ok) {
         // faking api calls, so simplifying what would be done here
