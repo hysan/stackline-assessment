@@ -1,0 +1,36 @@
+@value colors: "../styles/_colors.css";
+@value light-grey, dark-grey, icon-selected from colors;
+
+.nav li {
+  list-style: none;
+  padding: 0.5rem;
+  color: light-grey;
+  font-weight: bold;
+}
+
+.nav ul {
+  margin: 1rem;
+  padding: 0;
+}
+
+.nav li svg {
+  margin-right: 0.75rem;
+}
+
+.nav a {
+  text-decoration: none; /* no underline */
+}
+
+.nav a,
+.nav a:visited,
+.nav a:active {
+  color: light-grey;
+}
+
+.nav a.selected {
+  color: dark-grey;
+}
+
+.nav a.selected svg {
+  color: icon-selected;
+}
