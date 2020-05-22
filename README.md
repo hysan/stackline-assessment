@@ -1,5 +1,11 @@
 # Stackline Assessment
 
+## Deployment
+
+This repository is configured to use Github Pages. To deploy, run: `npm run deploy`.
+
+You can view the currently deployed version of this project here: https://hysan.github.io/stackline-assessment/
+
 ## Setup
 
 ### Redux
@@ -45,16 +51,17 @@ Setup with:
 
 **Minimum Requirements** (based on instructions):
 
-- [ ] Display Product
-- [ ] 1 Year View Graph of Sales
-- [ ] Sortable Table of Sales History
-- [ ] Pull JSON from mock endpoint
+- [x] Display Product
+- [x] 1 Year View Graph of Sales
+- [x] Table of Sales History
+- [x] Pull JSON from mock endpoint
 
 **Additional Requirements**:
 
-- [ ] Navigation
+- [x] Navigation
 - [ ] Overview Page (likely additional product information along with summaries)
 - [ ] Ability to view different years for Sales Graph
+- [ ] Ability to sort the Sales History table
 
 ## Usage
 

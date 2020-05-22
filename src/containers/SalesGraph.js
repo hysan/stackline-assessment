@@ -49,6 +49,10 @@ function SalesGraph(props) {
           wholesaleSales,
           unitsSold,
         } = sale;
+        // The current data set is restricted to a single year,
+        // but it's possible that this can span multiple years
+        // in which case you'd want to track which year is selected
+        // and filter by that.
         const month = parseMonth(weekEnding);
 
         monthlySales[month].retailSales += retailSales;
