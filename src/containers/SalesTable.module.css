@@ -28,6 +28,10 @@
   padding: 1rem 2rem;
 }
 
+.table tbody td:not(:first-child) {
+  padding-right: 2.7rem;
+}
+
 .table th {
   color: dark-grey;
 }
