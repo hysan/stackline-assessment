@@ -1,7 +1,7 @@
 import * as PRODUCT from '../constants/product';
 
 const initialState = {
-  product: null,
+  product: {},
   sales: [],
   tags: [],
   loadingProduct: false,
