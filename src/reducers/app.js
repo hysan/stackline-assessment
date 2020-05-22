@@ -15,7 +15,7 @@ export default function reducer(state = initialState, action) {
       return { ...state, loadingProducts: true };
     case APP.FETCHED_PRODUCTS:
       return { ...state, loadingProducts: false };
-    case APP.FETCH_PRODUCT_ERROR:
+    case APP.FETCH_PRODUCTS_ERROR:
       // What happens here depends on how you want your app to
       // behave on API failures.
       return state;

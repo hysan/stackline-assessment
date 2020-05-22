@@ -27,7 +27,7 @@ export const getProducts = () => (dispatch) => {
       // Depending on your requirements, you can retry with back off, not retry,
       // display an error message, etc.
       dispatch({
-        type: APP.FETCH_PRODUCT_ERROR,
+        type: APP.FETCH_PRODUCTS_ERROR,
         payload: new Error(err),
         error: true,
       });
