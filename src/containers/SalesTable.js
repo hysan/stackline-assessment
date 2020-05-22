@@ -1,5 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+
+import styles from './SalesTable.module.css';
 
 /**
  * Using something like moment would be a bit heavy
@@ -34,6 +38,10 @@ function formatCurrency(amount) {
   });
 }
 
+// This is in the containers folder as this will end up being
+// stateful as sorting only matters within this component.
+// No point in keeping that state in redux unless sorting must be
+// persisted when navigating away and back to the page.
 function SalesTable(props) {
   const { sales, loadingSales } = props;
 
@@ -44,14 +52,29 @@ function SalesTable(props) {
   // Given that this table also has sorting though, you will likely
   // need some form of sorting support in your API to do this easily.
   return (
-    <table>
+    <table className={styles.table}>
       <thead>
         <tr>
-          <th>WEEK ENDING</th>
-          <th>RETAIL SALES</th>
-          <th>WHOLESALE SALES</th>
-          <th>UNITS SOLD</th>
-          <th>RETAILER MARGIN</th>
+          <th>
+            {'WEEK ENDING '}
+            <FontAwesomeIcon icon={faAngleDown} />
+          </th>
+          <th>
+            {'RETAIL SALES '}
+            <FontAwesomeIcon icon={faAngleDown} />
+          </th>
+          <th>
+            {'WHOLESALE SALES '}
+            <FontAwesomeIcon icon={faAngleDown} />
+          </th>
+          <th>
+            {'UNITS SOLD '}
+            <FontAwesomeIcon icon={faAngleDown} />
+          </th>
+          <th>
+            {'RETAILER MARGIN '}
+            <FontAwesomeIcon icon={faAngleDown} />
+          </th>
         </tr>
       </thead>
       <tbody>
