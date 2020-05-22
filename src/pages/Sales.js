@@ -11,10 +11,34 @@ class Sales extends Component {
       getProduct(productId);
       getProductSales(productId);
     }
+
+    // If the productId from the path is invalid or non-existant,
+    // you will likely want to fire off a different action.
   }
 
   render() {
-    return <div></div>;
+    const { product } = this.props;
+
+    return (
+      <div>
+        <div>
+          <div>
+            <pre>{JSON.stringify(product, undefined, 4)}</pre>
+          </div>
+          <nav>
+            <p>Some navigation</p>
+          </nav>
+        </div>
+        <div>
+          <div>
+            <p>Graph</p>
+          </div>
+          <div>
+            <p>Table</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

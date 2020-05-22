@@ -1,6 +1,11 @@
 @value colors: "../styles/_colors.css";
-@value dark-grey, chart-blue from colors;
+@value foreground from colors;
 
 .header {
-  color: dark-grey;
+  background-color: foreground;
+}
+
+.logo {
+  height: 2rem;
+  margin: 1rem;
 }
