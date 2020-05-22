@@ -15,7 +15,8 @@
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debug": "warn",
     "react/destructuring-assignment": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "no-shadow": 0
   },
   "env": {
     "browser": true,

@@ -29,12 +29,8 @@ class App extends Component {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/product/:productId">
-              <Overview />
-            </Route>
-            <Route exact path="/product/:productId/sales">
-              <Sales />
-            </Route>
+            <Route exact path="/product/:productId" component={Overview} />
+            <Route exact path="/product/:productId/sales" component={Sales} />
             <Route path="*">
               <Redirect to="/" />
             </Route>
