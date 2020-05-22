@@ -6,6 +6,9 @@ import styles from './Sales.module.css';
 import ProductCard from '../components/ProductCard';
 import Tags from '../components/Tags';
 import ProductNav from '../components/ProductNav';
+import SalesGraph from '../containers/SalesGraph';
+import SalesTable from '../containers/SalesTable';
+
 import {
   getProduct,
   getProductSales,
@@ -45,10 +48,10 @@ class Sales extends Component {
         </div>
         <div className={styles.rightPane}>
           <div className={styles.widgetContainer}>
-            <p>Graph</p>
+            <SalesGraph />
           </div>
           <div className={styles.widgetContainer}>
-            <p>Table</p>
+            <SalesTable />
           </div>
         </div>
       </div>
